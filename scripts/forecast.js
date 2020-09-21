@@ -8,8 +8,10 @@ class Forecast{
 
     }
     async updateCity(city){
+
         const cityDetails = await this.getCity(city);
         const weather = await this.getWeather(cityDetails.Key);
+
         return{cityDetails, weather};
     }
     
@@ -23,7 +25,7 @@ class Forecast{
 
     async getWeather(id){
         const query = `${id}?apikey=${this.key}`;
-        const response = await fetch(this.getWeather + query);
+        const response = await fetch(this.weatherURL + query);
         const data = await response.json();
         return data[0];
     }
