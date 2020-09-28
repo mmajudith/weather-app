@@ -43,7 +43,6 @@ cityForm.addEventListener('submit', e =>{
 
     //get city value
     const city = cityForm.city.value.trim();
-    cityForm.reset();
 
     //update iu with new city
     forecast.updateCity(city)
